@@ -16,36 +16,63 @@
         }
 
         .list-one{
-            list-style-type: circle;
+            list-style-type: square;
         }
 
         .list-two{
-            list-style-type: none;
             border: 1px solid black;
+            /* padding-left: 0; */
+            list-style-type: none;
+            /* width: 200px; */
             padding: 5px;
-            /* border-radius: 10px; */
-            width: 200px;
+            text-align: right;
         }
+
         .list-two li{
             border: 1px solid black;
-            padding: 10px;
-            margin-bottom: 5px;
+            padding: 10px 15px;
+            /* text-align: center; */
+            /* margin-bottom: 5px; */
+            /* width: 200px; */
+            display: inline-block;
+            /* margin: 0 10px; */
+            transition: 0.5s;
         }
-        .list-two li:first-child{
-            /* border-radius: 10px 10px 0 0; */
-        }
+
         .list-two li:last-child{
-            /* border-radius: 0 0 10px 10px ; */
             margin-bottom: 0;
         }
-        
+
+        .list-two li:hover,.list-two li.active{
+            background-color: black;
+            color: white;
+        }
+
+        .list-three{
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .list-three li{
+            background-color: #dbdbdb;
+            color: black;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            width: 200px;
+            border-left: 2px solid black;
+            transition: 0.5s;
+            box-sizing: border-box;
+        }
+        .list-three li:hover,.list-three li.active{
+            border-left: 8px solid black;
+        }
     </style>
 </head>
 <body>
 
     <ul class="list-one">
         <li>Apple</li>
-        <li>Orange</li>
+        <li >Orange</li>
         <li>Mango</li>
         <li>Banana</li>
         <li>Strawberry</li>
@@ -65,7 +92,7 @@
 
     <ul class="list-three">
         <li>Apple</li>
-        <li>Orange</li>
+        <li class="active">Orange</li>
         <li>Mango</li>
         <li>Banana</li>
         <li>Strawberry</li>
