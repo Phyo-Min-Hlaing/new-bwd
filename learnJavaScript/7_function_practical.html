@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+        let record = [];
+
+        function saveResult(w,b,r){
+            let record = {
+                width: w,
+                breadth : b,
+                result : r
+            }
+            return record;
+        }
+
+        function getArea(w,b){
+            let x = w*b;
+            let result = `${x} square feet`;
+            record[record.length] = saveResult(w,b,result);
+            return result;
+        }
+
+        let rates = {
+            usd : 1637,
+            eur : 1835,
+            sgd : 1160
+        }
+
+        function exchangetoMMK(amount,curreny){
+            let exchangeRate = rates[curreny];
+            return exchangeRate * amount + " mmk";
+        }
+    </script>
+</body>
+</html>

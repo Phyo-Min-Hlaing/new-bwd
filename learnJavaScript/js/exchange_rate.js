@@ -1,4 +1,4 @@
-let excnageRate = {
+let exchangeRate = {
     "info": "Central Bank of Myanmar",
     "description": "Official Website of Central Bank of Myanmar",
     "timestamp": "1626422400",
