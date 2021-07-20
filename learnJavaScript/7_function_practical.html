@@ -10,35 +10,69 @@
     
     <script>
 
+        let record = []; // to store result
+        let index = 0;
 
-        let record = [];
-
-        function saveResult(w,b,r){
-            let record = {
-                width: w,
+        function saveRecord(w,b,r){
+            record[index] = {
+                width :w,
                 breadth : b,
-                result : r
-            }
-            return record;
+                result :r
+            };
+            index++;
         }
 
-        function getArea(w,b){
-            let x = w*b;
-            let result = `${x} square feet`;
-            record[record.length] = saveResult(w,b,result);
+        function calcArea(width,breadth){
+            let calc = width * breadth;
+            let result = calc+" sqft";
+            saveRecord(width,breadth,result);
             return result;
         }
 
+        //ငွေလဲနူန်း
         let rates = {
-            usd : 1637,
-            eur : 1835,
-            sgd : 1160
+            usd:1636,
+            eur:1933,
+            sgd:1208
         }
 
-        function exchangetoMMK(amount,curreny){
-            let exchangeRate = rates[curreny];
-            return exchangeRate * amount + " mmk";
+        function exchnageToMmk(amount, currency){
+            let calc = amount * rates[currency];
+            let result = calc + " mmk";
+            return result;
         }
+
+        function exchnageFromMmk(amount, currency){
+            let calc = amount / rates[currency];
+            let result = calc +" "+currency;
+            return result;
+        }
+
+        // အသီးစျေး
+        let furitPrice = {
+            orange : 100,
+            manog : 250,
+            apple : 70
+        }
+
+        function calcTax(amount, percentage=5){
+            return (amount*percentage)/100;
+        }
+
+        function calcCost(quentity, furit){
+            let calc =  quentity * furitPrice[furit];
+            let result = calc + " mmk";
+            return {
+                name : furit,
+                unitPrice : furitPrice[furit],
+                quentity : quentity,
+                cost : calc,
+                tax : calcTax(calc),
+                total : calc + calcTax(calc)
+            };
+        }
+
+
     </script>
 </body>
 </html>
